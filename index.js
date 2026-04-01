@@ -9,12 +9,7 @@ const app = express();
 const port = process.env.PORT;
 app.use(express.json());
 app.use(cookieParser());
-try {
-  await connectDB();
-  console.log("Database Connected");
-} catch (error) {
-  console.log("Database Connection Failed", error.message);
-}
+console.log("Database Connected");
 app.use("/api", loginRoutes)
 app.use("/api", registerRoutes)
 app.listen(port, () => {
