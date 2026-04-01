@@ -59,7 +59,7 @@ export const login = async (req, res) => {
         email: user.email,
       },
       token,
-      expiresAt,
+      // expiresAt,
     });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });

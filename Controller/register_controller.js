@@ -22,7 +22,7 @@ const registerUser = async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    await connection.execute(
+    await connectDB.execute(
       "INSERT INTO register (username, email, password) VALUES (?, ?, ?)",
       [username, email, hashedPassword],
     );
